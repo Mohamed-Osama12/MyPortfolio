@@ -11,6 +11,8 @@ import 'package:my_portfolio/widgets/profile_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:html' as html;
 
+
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -124,15 +126,13 @@ class _HomePageState extends State<HomePage> {
         Constants.sizedBox(height: 15.0),
         FadeInDown(
           duration: const Duration(milliseconds: 1600),
-          child: Expanded(
-            child: Text(
-              'Passionate Flutter developer with a strong foundation in mobile app development and a keen'
-                  ' eye for UI/UX design. Skilled in crafting high-performance, cross-platform applications'
-                  ' with clean and maintainable code. Experienced in integrating APIs, state management,'
-                  ' and optimizing app performance. Dedicated to delivering innovative solutions and '
-                  'enhancing user experiences through modern Flutter development.',
-              style: AppTextStyles.normalStyle(),
-            ),
+          child: Text(
+            'Passionate Flutter developer with a strong foundation in mobile app development and a keen'
+                ' eye for UI/UX design. Skilled in crafting high-performance, cross-platform applications'
+                ' with clean and maintainable code. Experienced in integrating APIs, state management,'
+                ' and optimizing app performance. Dedicated to delivering innovative solutions and '
+                'enhancing user experiences through modern Flutter development.',
+            style: AppTextStyles.normalStyle(),
           ),
         ),
         Constants.sizedBox(height: 22.0),

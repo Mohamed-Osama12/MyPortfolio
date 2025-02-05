@@ -7,6 +7,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../globals/app_colors.dart';
 import '../globals/app_text_styles.dart';
 import '../globals/constants.dart';
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 
 class MainDashBoard extends StatefulWidget {
   const MainDashBoard({Key? key}) : super(key: key);
@@ -16,6 +17,8 @@ class MainDashBoard extends StatefulWidget {
 }
 
 class _MainDashBoardState extends State<MainDashBoard> {
+  final ScrollController _scrollController = ScrollController();
+
   final ItemScrollController _itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
   final ScrollOffsetListener scrollOffsetListener = ScrollOffsetListener.create();
@@ -139,7 +142,7 @@ class _MainDashBoardState extends State<MainDashBoard> {
           Scrollbar(
             trackVisibility: true,
             thumbVisibility: true,
-            thickness: 8,
+            thickness: 1,
             interactive: true,
             child: ScrollablePositionedList.builder(
               itemCount: screensList.length,
@@ -151,6 +154,17 @@ class _MainDashBoardState extends State<MainDashBoard> {
               },
             ),
           ),
+
+          // DraggableScrollbar.semicircle(
+          //   controller: _scrollController,
+          //   child: ListView.builder(
+          //     controller: _scrollController, // Use this controller instead
+          //     itemCount: screensList.length,
+          //     itemBuilder: (context, index) {
+          //       return screensList[index];
+          //     },
+          //   ),
+          // ),
 
           // Conditionally show the footer
           if (showFooter)

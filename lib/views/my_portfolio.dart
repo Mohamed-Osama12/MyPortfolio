@@ -61,7 +61,7 @@ class _MyPortfolioState extends State<MyPortfolio> {
       image: AppAssets.henta,
       title: 'Henta - هينتا',
       body: 'A dual-flow Flutter app connecting authors and readers. Authors easily upload books, manage publications, and track performance via a comprehensive dashboard, maintaining content control and IP protection. Readers stay updated on author\'s activities. Secure in-app payments facilitate book purchases.',
-      // androidLink: 'https://play.google.com/store/apps/details?id=com.egypin.evyx',
+      androidLink: 'https://play.google.com/store/apps/details?id=com.apphentaa.evyx',
       // iosLink: 'https://apps.apple.com/kw/app/clincher/id6642676933',
     ),
 
@@ -126,7 +126,10 @@ class _MyPortfolioState extends State<MyPortfolio> {
         return FadeInUpBig(
           duration: const Duration(milliseconds: 1600),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              if (project.androidLink != null)
+              _launchURL(project.androidLink!);
+            },
             onHover: (value) {
               setState(() {
                 if (value) {
@@ -192,11 +195,12 @@ class _MyPortfolioState extends State<MyPortfolio> {
                                   height: 40,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    gradient:  LinearGradient(
-                                      colors: [AppColors.backgroundColor3, AppColors.backgroundColor4 , Colors.white], // Customize gradient colors
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ),
+                                    color: AppColors.backgroundColor,
+                                    // gradient:  LinearGradient(
+                                    //   colors: [AppColors.backgroundColor3, AppColors.backgroundColor4 , Colors.white], // Customize gradient colors
+                                    //   begin: Alignment.topLeft,
+                                    //   end: Alignment.bottomRight,
+                                    // ),
                                     boxShadow: [
                                       BoxShadow(
                                         color: Colors.black.withOpacity(0.3), // Shadow color
@@ -221,11 +225,12 @@ class _MyPortfolioState extends State<MyPortfolio> {
                                   height: 40,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    gradient:  LinearGradient(
-                                      colors: [AppColors.backgroundColor3, AppColors.backgroundColor4 , Colors.white], // Customize gradient colors
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ),
+                                    color: AppColors.backgroundColor,
+                                    // gradient:  LinearGradient(
+                                    //   colors: [AppColors.backgroundColor3, AppColors.backgroundColor4 , Colors.white], // Customize gradient colors
+                                    //   begin: Alignment.topLeft,
+                                    //   end: Alignment.bottomRight,
+                                    // ),
                                     boxShadow: [
                                       BoxShadow(
                                         color: Colors.black.withOpacity(0.3), // Shadow color
